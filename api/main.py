@@ -21,7 +21,7 @@ app.add_middleware(
 )
 
 
-MODEL = load_model("saved_models/potatoes.h5" , compile=False)
+MODEL = load_model("api/potatoes.h5" , compile=False)
 CLASS_NAMES = ["Early Blight" , "Late Blight" , "Healthy"]
 
 @app.get("/ping")
