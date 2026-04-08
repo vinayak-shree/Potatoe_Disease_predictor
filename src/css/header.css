@@ -1,0 +1,64 @@
+/* Header */
+.it{
+    list-style-type: none;
+    padding-bottom: 25px;
+}
+.head {
+    position: fixed;          /* keeps header at top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    background-color: black;
+    color: white;
+    height: 50px;   /* give header fixed height */
+    margin-bottom: 10rem;
+}
+.about1{
+    height: 20rem;
+    width: 20rem;
+    position: relative;
+    left: 22rem;
+    top: 2rem;
+background-color: rgba(255, 255, 255);
+    border: 1px solid black;
+    border-radius: 20px;
+    margin-right: 10px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+    filter: blur(1px);
+    opacity:0.6;
+    top: 5rem;
+}
+/* Body */
+body {
+    margin: 0;
+    padding-top: 100px;   /* same as header height so content doesn't hide */
+    width: 100%;
+    min-height: 100vh;
+
+    background:url('top-view-raw-potatoes-with-copy-space-wooden-background.jpg')no-repeat center; /* simple file name */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.container1
+{
+    margin-left: 7rem;
+    display: flex;
+    margin-top: 3%;
+    position: relative;
+}
+.form-class
+{
+    position: absolute;
+    top: 15rem;
+    margin-left: 55px;
+    left: 22rem;
+
+
+}
