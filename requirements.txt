@@ -1,8 +1,7 @@
-python-3.10.13
 tensorflow==2.15.0
-fastapi
-uvicorn
+fastapi==0.110.0
+uvicorn==0.29.0
 python-multipart
 pillow
 matplotlib
-numpy
+numpy==1.26.4
