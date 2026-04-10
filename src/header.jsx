@@ -8,7 +8,7 @@ function Header() {
         const formData = new FormData()
         formData.append("file",file)
 
-        const response = await fetch("https://potatoe-disease-fastapi-url.onrender.com" , {
+        const response = await fetch("https://potatoe-disease-fastapi-url.onrender.com/predict" , {
             method: "POST",
             body: formData,
         })
