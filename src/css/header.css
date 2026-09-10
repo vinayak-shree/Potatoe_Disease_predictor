@@ -1,64 +1,397 @@
-/* Header */
-.it{
-    list-style-type: none;
-    padding-bottom: 25px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-.head {
-    position: fixed;          /* keeps header at top */
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    background-color: black;
-    color: white;
-    height: 50px;   /* give header fixed height */
-    margin-bottom: 10rem;
-}
-.about1{
-    height: 20rem;
-    width: 20rem;
-    position: relative;
-    left: 22rem;
-    top: 2rem;
-background-color: rgba(255, 255, 255);
-    border: 1px solid black;
-    border-radius: 20px;
-    margin-right: 10px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size:cover;
-    filter: blur(1px);
-    opacity:0.6;
-    top: 5rem;
-}
-/* Body */
+
 body {
-    margin: 0;
-    padding-top: 100px;   /* same as header height so content doesn't hide */
+  font-family: Arial, Helvetica, sans-serif;
+  background: #071a12;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+.hero {
+  min-height: 100vh;
+  padding: 25px 8%;
+  background:
+    radial-gradient(
+      circle at 10% 20%,
+      rgba(54, 168, 93, 0.25),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 90% 80%,
+      rgba(32, 130, 75, 0.2),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #06130e,
+      #0b2418,
+      #06130e
+    );
+
+  color: white;
+}
+
+/* Navbar */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.ai-badge {
+  padding: 8px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.08);
+  font-size: 13px;
+}
+
+/* Main */
+
+.hero-content {
+  max-width: 1200px;
+  margin: 90px auto 0;
+
+  display: grid;
+  grid-template-columns: 1fr 450px;
+  gap: 80px;
+
+  align-items: center;
+}
+
+.hero-text {
+  max-width: 600px;
+}
+
+.small-title {
+  color: #55d879;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin-bottom: 18px;
+}
+
+.hero-text h1 {
+  font-size: 65px;
+  line-height: 1.05;
+  margin-bottom: 25px;
+}
+
+.hero-text h1 span {
+  color: #55d879;
+}
+
+.description {
+  color: #b7c8bf;
+  font-size: 18px;
+  line-height: 1.7;
+  max-width: 550px;
+}
+
+/* Upload Card */
+
+.upload-card {
+  padding: 35px;
+  border-radius: 25px;
+
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  backdrop-filter: blur(20px);
+
+  text-align: center;
+
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.35);
+}
+
+.upload-icon {
+  width: 75px;
+  height: 75px;
+
+  margin: 0 auto 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50%;
+
+  background: rgba(85, 216, 121, 0.15);
+
+  font-size: 32px;
+}
+
+.upload-card h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.upload-card > p {
+  color: #9eb2a7;
+  margin-bottom: 20px;
+}
+
+/* Button */
+
+.upload-button {
+  display: inline-block;
+
+  padding: 14px 30px;
+
+  border-radius: 12px;
+
+  background: #55d879;
+  color: #06210f;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.25s ease;
+}
+
+.upload-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(85, 216, 121, 0.3);
+}
+
+.file-info {
+  margin-top: 15px !important;
+  margin-bottom: 0 !important;
+  font-size: 12px;
+}
+
+/* Preview */
+
+.preview-container {
+  margin-top: 25px;
+}
+
+.preview-image {
+  width: 100%;
+  max-height: 230px;
+
+  object-fit: cover;
+
+  border-radius: 15px;
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Loading */
+
+.loading {
+  margin-top: 25px;
+  color: #8deba5;
+}
+
+.spinner {
+  width: 35px;
+  height: 35px;
+
+  margin: 0 auto 12px;
+
+  border: 4px solid rgba(255, 255, 255, 0.2);
+  border-top: 4px solid #55d879;
+
+  border-radius: 50%;
+
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Error */
+
+.error {
+  margin-top: 20px;
+  padding: 12px;
+
+  border-radius: 10px;
+
+  background: rgba(255, 70, 70, 0.12);
+  color: #ff9c9c;
+
+  font-size: 14px;
+}
+
+/* Result */
+
+.result-card {
+  margin-top: 25px;
+
+  text-align: left;
+
+  border-radius: 16px;
+
+  overflow: hidden;
+
+  background: rgba(0, 0, 0, 0.35);
+
+  border: 1px solid rgba(85, 216, 121, 0.2);
+}
+
+.result-header {
+  padding: 15px 18px;
+
+  background: rgba(85, 216, 121, 0.12);
+
+  color: #72e993;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.result-content {
+  padding: 20px;
+}
+
+.result-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 15px;
+}
+
+.result-label {
+  color: #9eb2a7;
+  font-size: 14px;
+}
+
+.result-value {
+  color: #ffffff;
+  font-size: 17px;
+}
+
+.confidence {
+  color: #55d879;
+  font-size: 18px;
+}
+
+/* Confidence bar */
+
+.confidence-bar {
+  width: 100%;
+  height: 8px;
+
+  background: rgba(255, 255, 255, 0.1);
+
+  border-radius: 20px;
+
+  overflow: hidden;
+}
+
+.confidence-progress {
+  height: 100%;
+
+  background: #55d879;
+
+  border-radius: 20px;
+
+  transition: width 0.6s ease;
+}
+
+/* Footer */
+
+.footer-text {
+  max-width: 1200px;
+
+  margin: 70px auto 0;
+
+  text-align: center;
+
+  color: #657d70;
+
+  font-size: 13px;
+}
+
+.owner{
+      max-width: 1200px;
+    margin-top: 10px;
+  text-align: center;
+
+  color: #657d70;
+margin-left: 13rem;
+  font-size: 13px;
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+
+  .hero {
+    padding: 20px;
+  }
+
+  .hero-content {
+    grid-template-columns: 1fr;
+
+    margin-top: 60px;
+
+    gap: 50px;
+  }
+
+  .hero-text {
+    text-align: center;
+    margin: auto;
+  }
+
+  .hero-text h1 {
+    font-size: 45px;
+  }
+
+  .description {
+    font-size: 16px;
+  }
+
+  .upload-card {
+    max-width: 500px;
     width: 100%;
-    min-height: 100vh;
+    margin: auto;
+  }
 
-    background:url('top-view-raw-potatoes-with-copy-space-wooden-background.jpg')no-repeat center; /* simple file name */
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+  .owner{
+    font-size: 16px;
+  }
 }
 
-.container1
-{
-    margin-left: 7rem;
-    display: flex;
-    margin-top: 3%;
-    position: relative;
-}
-.form-class
-{
-    position: absolute;
-    top: 15rem;
-    margin-left: 55px;
-    left: 22rem;
+@media (max-width: 500px) {
 
+  .logo {
+    font-size: 19px;
+  }
 
+  .ai-badge {
+    font-size: 11px;
+    padding: 7px 12px;
+  }
+
+  .hero-text h1 {
+    font-size: 38px;
+  }
+
+  .upload-card {
+    padding: 25px 18px;
+  }
 }
